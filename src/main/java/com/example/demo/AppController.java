@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.List;
 
+import org.apache.tomcat.jni.Library;
 import org.springframework.beans.factory.annotation.Autowired; // связь зависимотей
 import org.springframework.data.repository.query.Param; // привязываем параметры
 import org.springframework.stereotype.Controller; // класс управляющий
