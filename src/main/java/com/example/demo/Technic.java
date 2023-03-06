@@ -17,6 +17,7 @@ import jakarta.persistence.Id;
 //   driver varchar (255),
 //   PRIMARY KEY (ID)
 //                     ) ENGINE=InnODB DEFAULT CHARSET=UTF8
+// сущность которую нужно сохранять в базе данных
 @Entity
 public class Technic {
     private Long ID;

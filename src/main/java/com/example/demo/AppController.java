@@ -2,16 +2,16 @@ package com.example.demo;
 
 import java.util.List;
 
-import jakarta.jws.WebParam;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.beans.factory.annotation.Autowired; // связь зависимотей
+import org.springframework.data.repository.query.Param; // привязываем параметры
+import org.springframework.stereotype.Controller; // класс управляющий
+import org.springframework.ui.Model; // взаимодействия view controller
+import org.springframework.web.bind.annotation.ModelAttribute; // связывание параметра и метода , который выводится в веб интейфейс
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndView; // название html страниц которые подвязываются к контролеру
 
 @Controller
 public class AppController {
@@ -30,12 +30,12 @@ public class AppController {
     @RequestMapping("/new")
     public String showNewTechnicForm(Model model){
         Technic technic = new Technic();
-        model.addAttribute("technic", technic);
+        model.addAttribute("Technic", technic);
         return "new_technic";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveTechnic(@ModelAttribute("technic") Technic technic){
+    public String saveTechnic(@ModelAttribute("Technic") Technic technic){
         service.save(technic);
         return "redirect:/";
     }
